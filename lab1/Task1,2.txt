@@ -1,0 +1,21 @@
+Task 1.2
+Foreign Key Design
+
+The foreign key relationships are:
+
+1. Student.AdvisorID => Professor.ProfID
+   Each student's advisor is a professor.
+
+2. Course.DepartmentCode => Department.DeptCode
+   Each course belongs to a department.
+
+3. Department.ChairID => Professor.ProfID
+   The chair of a department is a professor.
+
+4. Enrollment.StudentID => Student.StudentID
+   This connects each enrollment to a student.
+
+5. Enrollment.CourseID => Course.CourseID
+   This connects each enrollment to a course.
+
+These foreign keys connect the tables and make sure that the referenced student, professor, course, or department exists.

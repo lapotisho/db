@@ -1,0 +1,53 @@
+Task 4.1: Denormalized Table Analysis
+
+Functional dependencies
+
+StudentID => StudentName, StudentMajor
+
+ProjectID => ProjectTitle, ProjectType, SupervisorID, StartDate, EndDate
+
+SupervisorID => SupervisorName, SupervisorDept
+
+(StudentID, ProjectID) => Role, HoursWorked
+
+Primary key: (StudentID, ProjectID)
+
+Problems
+
+There is repeated student, project and supervisor information.
+
+Update anomaly: If a supervisor changes their department, many rows have to be updated.
+
+Insert anomaly: A new project cannot easily be added if no student is assigned to it.
+
+Delete anomaly: Deleting the last student working on a project can also delete the project information.
+
+1.
+1NF
+The table is already in 1NF because all attributes contain single values.
+
+2.
+2NF
+There are partial dependencies on StudentID and ProjectID.
+
+Student(StudentID, StudentName, StudentMajor)
+
+Project(ProjectID, ProjectTitle, ProjectType, SupervisorID, SupervisorName, SupervisorDept, StartDate, EndDate)
+
+StudentProject(StudentID, ProjectID, Role, HoursWorked)
+
+3.
+3NF
+There is a transitive dependency:
+
+SupervisorID => SupervisorName, SupervisorDept
+
+Final tables:
+
+Student(StudentID, StudentName, StudentMajor)
+
+Supervisor(SupervisorID, SupervisorName, SupervisorDept)
+
+Project(ProjectID, ProjectTitle, ProjectType, SupervisorID, StartDate, EndDate)
+
+StudentProject(StudentID, ProjectID, Role, HoursWorked)

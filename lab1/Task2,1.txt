@@ -1,0 +1,66 @@
+Task 2.1
+1. Entities
+
+Strong entities:
+
+Patient
+Doctor
+Department
+Appointment
+Prescription
+Specialization
+
+Weak entity:
+
+Room — because room number is only unique within a department. For example, Room 101 in Cardiology is different from Room 101 in Neurology.
+2. Attributes
+Patient
+PatientID — simple, primary key
+Name — simple
+Birthdate — simple
+Address — composite: Street, City, State, ZIP
+PhoneNumber — multi-valued
+InsuranceInfo — simple
+Doctor
+DoctorID — simple, primary key
+Name — simple
+Specialization — multi-valued
+PhoneNumber — multi-valued
+OfficeLocation — simple
+Department
+DepartmentCode — simple, primary key
+Name — simple
+Location — simple
+Appointment
+AppointmentID — simple, primary key
+DateTime — simple
+Purpose — simple
+Notes — simple
+Prescription
+PrescriptionID — simple, primary key
+Medication — simple
+Dosage — simple
+Instructions — simple
+Room
+RoomNumber — simple, partial key
+DepartmentCode — identifying attribute
+Composite primary key: (DepartmentCode, RoomNumber)
+Specialization
+SpecializationID — simple, primary key
+SpecializationName — simple
+
+3. Relationships and cardinalities
+Patient — Appointment: 1:N
+One patient can have many appointments.
+Doctor — Appointment: 1:N
+One doctor can have many appointments.
+Patient — Doctor: M:N through Appointment
+A patient can see many doctors and a doctor can see many patients.
+Doctor — Specialization: M:N
+A doctor can have multiple specializations and a specialization can belong to multiple doctors.
+Department — Room: 1:N
+One department can have many rooms.
+Doctor — Prescription: 1:N
+One doctor can prescribe many prescriptions.
+Patient — Prescription: 1:N
+One patient can have many prescriptions.

@@ -1,0 +1,34 @@
+2.Normalized relational schema
+
+Student(StudentID PK, Name, Email)
+
+Faculty(FacultyID PK, Name, Department, Email)
+
+Club(ClubID PK, ClubName, Description, AdvisorID FK)
+
+Membership(StudentID PK/FK, ClubID PK/FK, JoinDate, MembershipStatus)
+
+OfficerPosition(PositionID PK, PositionName)
+
+ClubOfficer(StudentID PK/FK, ClubID PK/FK, PositionID PK/FK, StartDate, EndDate)
+
+Event(EventID PK, ClubID FK, EventName, EventDate, Description)
+
+Attendance(EventID PK/FK, StudentID PK/FK, AttendanceStatus)
+
+Room(RoomID PK, Building, RoomNumber, Capacity)
+
+RoomReservation(ReservationID PK, EventID FK, RoomID FK, StartTime, EndTime)
+
+Budget(BudgetID PK, ClubID FK, FiscalYear, AllocatedAmount)
+
+Expense(ExpenseID PK, ClubID FK, ExpenseDate, Amount, Description)
+
+3.Design decision
+
+For officer positions, I could put PresidentID, TreasurerID, SecretaryID directly in the Club table. I chose a separate ClubOfficer table because a club can have different positions and it is easier to add new positions later.
+
+4.Example queries
+Find all students who are officers in the Computer Science Club, including their positions.
+List all club events scheduled for next week with their room reservations.
+Find the total expenses and allocated budget for each student club.

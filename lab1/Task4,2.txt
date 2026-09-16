@@ -1,0 +1,39 @@
+Task 4.2: Advanced Normalization
+
+Primary key
+
+(StudentID, CourseID, TimeSlot, Room)
+
+Functional dependencies
+
+StudentID => StudentMajor
+
+CourseID => CourseName
+
+(TimeSlot, Room) => Building
+
+(CourseID, TimeSlot, Room) => InstructorID
+
+InstructorID => InstructorName
+
+BCNF
+
+The table is not in BCNF because some determinants, such as StudentID and CourseID, are not candidate keys.
+
+BCNF decomposition
+
+Student(StudentID, StudentMajor)
+
+Course(CourseID, CourseName)
+
+Instructor(InstructorID, InstructorName)
+
+RoomSchedule(TimeSlot, Room, Building)
+
+CourseSection(CourseID, TimeSlot, Room, InstructorID)
+
+Enrollment(StudentID, CourseID, TimeSlot, Room)
+
+Information loss
+
+The decomposition should preserve the original information when the tables are joined. However, without a separate SectionID, some course sections may be difficult to distinguish if they have the same time and room.

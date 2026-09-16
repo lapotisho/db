@@ -1,0 +1,13 @@
+Task 2.2
+2. Weak entity
+OrderItem is a weak entity because it depends on an Order.
+It does not have its own ID. It is identified by OrderID + ProductID.
+For example, the same product can be in different orders, so we need the OrderID too.
+3. Many-to-many relationship with attributes
+There is an M:N relationship between Orders and Products.
+One order can have many products and one product can be in many orders.
+This relationship is represented by OrderItem.
+OrderItem has its own attributes:
+Quantity
+PriceAtOrder
+There is also an M:N relationship between Customers and Products through Reviews. Reviews have Rating, ReviewText and are associated with a specific customer and product.

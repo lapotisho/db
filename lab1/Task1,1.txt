@@ -1,0 +1,32 @@
+Task 1.1:
+EmpID │ SSN │ Email │ Phone │ Name │ Department │ Salary │
+├───────┼─────────────┼──────────────────┼──────────┼──────┼────────────┼────────┤
+│ 101 │ 123-45-6789 │ john@company.com │ 555-0101 │ John │ IT │ 75000 │
+│ 102 │ 987-65-4321 │ mary@company.com │ 555-0102 │ Mary │ HR │ 68000 │
+│ 103 │ 456-78-9123 │ bob@company.com │ 555-0103 │ Bob │ IT │ 72000 │
+1. 6 super keys: 
+{EmpID}
+{SSN}
+{Email}
+{Phone}
+{EmpID, Name}
+{EmpID, Department}
+{EmpID, Salary}
+{SSN, Name}
+2.candidate keys: 
+EmpID
+SSN
+Email
+Phone
+3.
+Primery Key: EmpID
+EmpID is specifically designed to identify an employee.
+It does not contain sensitive personal information.
+It is unlikely to change during an employee's employment.
+It can be easily referenced by other tables through foreign keys.
+4.can two employees have the same phone number?
+yes, two employees can have the same phone number unless the database schema specifies that Phone must be unique.
+In the sample data, all three employees currently have different phone numbers:
+John > 555-0101
+Mary > 555-0102
+Bob > 555-0103
