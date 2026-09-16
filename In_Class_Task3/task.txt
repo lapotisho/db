@@ -1,0 +1,29 @@
+Name: Baitas
+Student ID: 25B031174
+Group: Wd 13-14
+
+Part A:
+1. list every reason this table violates 1nf : 
+M01 : has 2 values in Phones , Sections, Coaches, MontlhyFees.
+M03 : has 2 values in Sections , Coaches , MonthlyFees.
+2. M01 will produce 4 rows :
+M01 , Aruzhan , 701-111-2233 , swimming , Omarov, 15000
+M01 , Aruzhan , 707-444-5566 , swimming , Omarov, 15000
+M01 , Aruzhan , 701-111-2233 , Chess , Kim, 8000
+M01 , Aruzhan , 707-444-5566 , Chess , Kim, 8000
+3. 
+Primary Key: MemberID,Phones,Sections
+4.
+Update anomaly:
+MontlhyFees , after updating the fees i would change it in every row which MonthlyFees are tied to 
+example Montlyfees Kim 8000 -> 15000 , each row with Kim should be changed
+Insert anomaly:
+new section has been created but no members are joined to it 
+Delete anomaly:
+deleting m02 will also delete the section swimming  
+5.
+
+Part B:
+1.
+Part C:
+
